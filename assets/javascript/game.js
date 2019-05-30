@@ -70,6 +70,16 @@ if (characterChosen === false){
     }
 }
 });
+
+//On click functionality for "start battle"
+$(document).on("click", "#start-battle", function() {
+    if (opponentChosen){
+        $("#battle-scene").show();
+        $("#intro-scene").hide();
+        $("#button-attack").show();
+    } 
+});
+
 //On click functionality for attack button with WIN LOSE SUICIDE scenario 
 $(document).on("click", "#attack", function() {
 
