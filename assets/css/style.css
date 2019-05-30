@@ -74,3 +74,15 @@ h3 {
     font-family: 'Boogaloo', cursive;
     color: rgb(65, 65, 65); 
 }
+
+#start-battle {
+    color: rgb(172, 44, 44);
+    font-family: 'Staatliches', cursive;
+    font-size: 30px; 
+}
+
+#next-page, #attack {
+    text-align: center; 
+    font-family: 'Staatliches', cursive;
+    margin-top: 0px; 
+}
