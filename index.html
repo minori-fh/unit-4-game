@@ -40,7 +40,57 @@
         <div class = "col-md-2">
         </div>
     </div>
-        
+
+    <!-- Character and Enemy list row -->
+    <div class = "row" id = "character-pick-header">
+        <div class = "col-md-6">
+            <h3>Pick your Character!</h3>
+        </div>
+        <div class = "col-md-6">
+            <h3>Enemies to Defeat</h3>
+        </div>
+    </div>
+    
+    <div class = "row" id = "character-pick">
+        <div class = "col-md-6">
+
+            <div class = "row">
+                <div class = "col-md-3 character" id = "bardur" data-value = "{healthPoints: 120, attackPower: 10, counterAttackPower: 10}"> 
+                    <img src = "assets/images/bardur.png" alt = "bardur image" height = "100" width = "90">
+                    <p><u>Bardur</u></p>
+                    <span>120</span>
+                </div>
+    
+                <div class = "col-md-3 character" id = "ai-mo" data-value = "{healthPoints: 100, attackPower: 18, counterAttackPower: 5}">
+                    <img src = "assets/images/ai-mo.png" alt = "ai-mo image" height = "100" width = "90">
+                    <p><u>Ai-mo</u></p>
+                    <span>100</span>
+                </div>
+    
+                <div class = "col-md-3 character" id = "aquarion" data-value = "{healthPoints: 150, attackPower: 6, counterAttackPower: 16}">
+                    <img src = "assets/images/aquarion.png" alt = "aquarion image" height = "100" width = "90">
+                    <p><u>Aquarion</u></p>
+                    <span>150</span>
+                </div>
+    
+                <div class = "col-md-3 character" id = "vengir" data-value = "{healthPoints: 180, attackPower: 11, counterAttackPower: 14}">
+                    <img src = "assets/images/vengir.png" alt = "vengir image" height = "100" width = "90">
+                    <p><u>Vengir</u></p>
+                    <span>180</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class = "col-md-6">
+            <container>
+                <div class = "row" id = "your-enemies">
+    
+                </div>
+            </container>
+        </div>
+    </div>
+    
 </section> 
 
 <!-- Battle scene -->
