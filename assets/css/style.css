@@ -90,3 +90,10 @@ h3 {
 #house1, #house2, #sword1, #sword2 {
     margin-top: 20px; 
 }
+
+#chosen-characters-02 {
+    color: white; 
+    height: 300px; 
+    text-align: center; 
+    font-family: 'Lobster Two', cursive;
+}
