@@ -65,4 +65,86 @@ if (characterChosen === false){
     }
 }
 });
+//On click functionality for attack button with WIN LOSE SUICIDE scenario 
+$(document).on("click", "#attack", function() {
+
+    if (opponentChosen) {
+        attackCount = attackCount + 1; 
+        opponentHP = opponentHP - playerAP * attackCount
+        playerHP = playerHP - opponentCAP 
+    
+        $("#your-opponent-02 span").html(opponentHP)
+        $("#your-character-02 span").html(playerHP)
+    
+    
+        //WIN scenario 
+        if(opponentHP <= 0 && playerHP > 0) {
+            
+            win = true; 
+            winCount = winCount + 1; 
+            firstRound = false; 
+    
+            console.log(playerHP)
+            console.log(attackCount)
+            console.log(opponentHP)
+            console.log(playerHP)
+            console.log(winCount)
+            
+    
+            if (winCount < 3){
+                $("#message").append("You won this round!")
+                $("#other-victim-link p").append("Pick your next victim...")
+                $("#button-attack").hide();
+
+                $(document).on("click", "#other-victim-link", function() {
+                    $("#intro-scene").show();
+                    $("#battle-scene").hide();
+
+                    $("#message").empty();   
+                    $("#other-victim-link p").empty(); 
+                    $("#your-opponent-02").empty();
+                    $("#your-character-02 span").html(playerHP)
+                    opponentChosen = false; 
+        
+                })
+
+                $(document).on("click", ".character", function() {    
+                    if(yourCharacter != $(this).html()){ //ensure player can't play against the same chosen character
+                        yourOpponent = $(this).html(); //pick the next opponent
+                        $(this).remove();
+                        opponentChosen = true; 
+        
+                        $("#your-opponent").empty();
+                        $("#your-opponent-02").empty();
+                        $("#your-opponent").append(yourOpponent);
+                        $("#your-opponent-02").append(yourOpponent);
+        
+                        //Set yourOpponent attack powers and health points
+                        var opponentValue = $(this).attr("data-value");
+                        var obj = eval("(" + opponentValue + ")");
+                        opponentHP = obj.healthPoints;
+                        opponentAP = obj.attackPower;
+                        opponentCAP = obj.counterAttackPower;
+                    }
+                })
+            } 
+            
+            if (winCount === 3) {
+                $("#message").append("You have defeated all enemies!!!")
+                $("#congrats-link p").append("Play again")
+                $("#button-attack").hide();
+                $("#congrats-link").on("click", function(){
+                    $("#intro-scene").show();
+                    $("#battle-scene").hide();
+
+                    $("#message").empty(); 
+                    $("#congrats-link p").empty();  
+                    reset()
+            })
+            }
+                
+            } //END WIN scenario 
+        }
+    })
+    
 });
