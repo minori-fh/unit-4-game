@@ -215,7 +215,14 @@ $(document).on("click", "#attack", function() {
             })
             
         } //END SUICIDE scenario 
+        } else {
+            $("#message").append("Opponent does not exist!")
+            $("#other-victim-link p").append("Click here to pick an opponent from 'enemies'.")
+            $("#other-victim-link").on("click", function(){
+                $("#intro-scene").show();
+                $("#battle-scene").hide();
+            })
         }
-    })
+    });
     
 });
