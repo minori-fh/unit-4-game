@@ -1,5 +1,10 @@
 //Document ready
 $(document).ready(function() {
+
+$("#intro-scene").hide(); 
+$("#intro-scene").delay(11000).show(0);
+$("#loading-page").delay(11000).hide(0);
+$("#battle-scene").hide();
     
 //Defined variables
 var yourCharacter = "";
