@@ -86,3 +86,7 @@ h3 {
     font-family: 'Staatliches', cursive;
     margin-top: 0px; 
 }
+
+#house1, #house2, #sword1, #sword2 {
+    margin-top: 20px; 
+}
