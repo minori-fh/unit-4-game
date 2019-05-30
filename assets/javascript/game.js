@@ -39,7 +39,30 @@ if (characterChosen === false){
     // $("#other-victims").css("color","white");
 
     characterChosen = true; //change chosenCharacter status to true
-}
-})
 
-}); //END document ready end
+} else if (characterChosen && opponentChosen === false) { //if a character was chosen, pick an opponent! 
+        
+    if(yourCharacter != $(this).html() && firstRound === true) { //ensure player cannot pick the same character to fight
+
+        opponentChosen = true; 
+        yourOpponent = $(this).html(); //grab the html contents of character that was clicked on for "yourOpponent"
+        $(this).remove(); //remove the contents from yourEnemies
+
+        //Append chosen opponent to appropriate HTML DOMs
+        $("#your-opponent").append(yourOpponent);
+        $("#your-opponent-02").append(yourOpponent);
+        $("#your-opponent-02").css("color", "white"); 
+
+        //Set yourOpponent attack powers and health points
+        var opponentValue = $(this).attr("data-value");
+        var obj = eval("(" + opponentValue + ")");
+        opponentHP = obj.healthPoints;
+        opponentAP = obj.attackPower;
+        opponentCAP = obj.counterAttackPower;
+
+        opponentChosen = true;
+
+    }
+}
+});
+});
