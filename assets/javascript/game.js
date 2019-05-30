@@ -143,7 +143,46 @@ $(document).on("click", "#attack", function() {
             })
             }
                 
-            } //END WIN scenario 
+        } //END WIN scenario 
+        
+        //LOSE scenario 
+        if(playerHP <= 0 && opponentHP > 0 && winCount != 3) {
+            $("#message").append("You lost, better luck next time.")
+            $("#other-victim-link p").append("Click here to restart")
+            $("#button-attack").hide();
+            $("#other-victim-link").on("click", function(){
+                $("#intro-scene").show();
+                $("#battle-scene").hide();
+
+                $("#message").empty();   
+                $("#other-victim-link p").empty(); 
+                $("#your-opponent-02").empty();
+                $("#your-character-02 span").html(playerHP)
+                opponentChosen = false; 
+                reset()
+            })
+        
+        } //END LOSE scenario
+    
+        //SUICIDE scenario
+        if(playerHP <= 0 && opponentHP <= 0 && winCount != 3) {
+            $("#message").append("It was a suicide mission! You both lost...");
+            $("#other-victim-link p").append("Click here to restart");
+            $("#button-attack").hide();
+            $("#other-victim-link").on("click", function(){
+                $("#intro-scene").show();
+                $("#battle-scene").hide();
+
+                $("#message").empty();   
+                $("#other-victim-link p").empty(); 
+                $("#your-opponent-02").empty();
+                $("#your-character-02 span").html(playerHP)
+                opponentChosen = false; 
+                reset()
+    
+            })
+            
+        } //END SUICIDE scenario 
         }
     })
     
