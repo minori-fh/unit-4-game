@@ -21,6 +21,17 @@ if (characterChosen === false){
 
     yourCharacter = $(this).html(); //grab the html contents of character that was clicked on
     $(this).remove();
+    
+    //Set yourCharacter attack powers and healthpoints
+    var playerValue = $(this).attr("data-value");
+    var obj = eval("(" + playerValue + ")"); 
+    playerHP = obj.healthPoints;
+    playerAP = obj.attackPower;
+    playerCAP = obj.counterAttackPower; 
+
+    $("#your-character").append(yourCharacter); //place the html contents from ^ into appropriate "your-character" div
+    $("#your-character-02").append(yourCharacter);
+    $("#your-character-02").css("color","white");
 
     $("#your-character").append(yourCharacter); //place the html contents from ^ into appropriate "your-character" div
     $("#your-character-02").append(yourCharacter);
