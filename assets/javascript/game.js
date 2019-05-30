@@ -20,6 +20,23 @@ var winCount = 0;
 var attackCount = 0; 
 var originalState = $("#character-pick").clone();
 
+//Create a function to reset
+function reset() {
+    yourCharacter = "";
+    yourEnemies = "";
+    yourOpponent = ""; 
+
+    characterChosen = false;
+    opponentChosen = false;
+    win = false; 
+    firstRound = true; 
+    winCount = 0; 
+
+    attackCount = 0; 
+    $("#your-opponent, #your-character, #your-enemies, #your-character-02, #your-opponent-02").empty();
+    $("#character-pick").replaceWith(originalState.clone());
+};
+
 //On click functionaliy to pick character
 $(document).on("click", ".character", function() { //putting event listener on document vs. specific element
 if (characterChosen === false){
