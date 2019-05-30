@@ -1,0 +1,21 @@
+#loading-page {
+    background-image: url(../images/loadingbackground.jpg);
+    background-size: 100vw 100vh;
+    bottom: 0px; 
+    text-align: center; 
+}
+
+#intro-scene {
+    background-image: url(../images/nightsky.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh; 
+    bottom: 0px; 
+    color: black; 
+}
+
+#battle-scene {
+    background-image: url(../images/battlescene.jpg);
+    background-repeat: no-repeat; 
+    background-size: 100vw 100vh; 
+    top: 0px; 
+}
