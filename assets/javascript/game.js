@@ -33,9 +33,12 @@ if (characterChosen === false){
     $("#your-character-02").append(yourCharacter);
     $("#your-character-02").css("color","white");
 
-    $("#your-character").append(yourCharacter); //place the html contents from ^ into appropriate "your-character" div
-    $("#your-character-02").append(yourCharacter);
-    $("#your-character-02").css("color","white");
+    //After character is chosen, move the contents of other characters to "enemies to defeat"
+    yourEnemies = $(".character").not(this); //assign characters that were not chosen to "yourEnemies"
+    yourEnemies.appendTo("#your-enemies");
+    // $("#other-victims").css("color","white");
+
+    characterChosen = true; //change chosenCharacter status to true
 }
 })
 
